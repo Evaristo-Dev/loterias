@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10231d">
+    <title>Sorteador de dezenas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">SEU PRÓXIMO JOGO</p>
+        <h1>Sorteador <span>Loterias</span></h1>
+        <p class="intro">Escolha quantos números sortear e o limite do seu jogo.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Configure o sorteio</h2>
+        <form id="draw-form">
+          <div class="fields">
+            <label class="field" for="quantity">
+              <span>Quantidade de dezenas</span>
+              <input id="quantity" name="quantity" type="number" min="1" max="1000" value="6" required>
+              <small>Quantos números você quer sortear?</small>
+            </label>
+            <label class="field" for="limit">
+              <span>
+                Quantidade de números
+              </span>
+              <input id="limit" name="limit" type="number" min="1" max="1000" value="60" required>
+              <small>O número máximo disponível no jogo.</small>
+            </label>
+          </div>
+          <button type="submit">
+            Sortear dezenas
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="results-heading">
+          <div>
+            <h2 id="results-title">RESULTADO</h2>
+          </div>
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+        </div>
+        <p id="message" class="message" role="status">Preencha as opções e faça seu primeiro sorteio.</p>
+        <div id="numbers" class="numbers" aria-label="Dezenas sorteadas"></div>
+      </section>
+
+      <footer>Os números são sorteados aleatoriamente e não garantem resultados.</footer>
+    </main>
+  </body>
+</html>
